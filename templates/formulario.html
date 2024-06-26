@@ -70,12 +70,12 @@
           <form id="formulario" onsubmit="clasificarInsecto(event)">
             <div class="form-group row">
               <div class="col-md-6">
-                <label for="Upload_speed">Velocidad de subida:</label>
+                <label for="Network_congestion">Congestion en la red:</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="Upload_speed"
-                  name="Upload_speed"
+                  id="Network_congestion"
+                  name="Network_congestion"
                   required
                 />
               </div>
@@ -105,12 +105,12 @@
                   />
                 </div>
                 <div class="col-md-6">
-                  <label for="Signal_strength">Intensidad de la señal:</label>
+                  <label for="Connection_type_Cable">Conexion tipo cable:</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="Signal_strength"
-                    name="Signal_strength"
+                    id="Connection_type_Cable"
+                    name="Connection_type_Cable"
                     required
                   />
                 </div>
@@ -140,21 +140,21 @@
         const Download_speed = parseFloat(
           document.getElementById("Download_speed").value
         );
-        const Upload_speed = parseFloat(
-          document.getElementById("Upload_speed").value
+        const Network_congestion = parseFloat(
+          document.getElementById("Network_congestion").value
         );
         const Connection_type_Fiber = parseFloat(
           document.getElementById("Connection_type_Fiber").value
         );
-        const Signal_strength = parseFloat(
-          document.getElementById("Signal_strength").value
+        const Connection_type_Cable = parseFloat(
+          document.getElementById("Connection_type_Cable").value
         );
 
         const data = {
           Download_speed: Download_speed,
-          Upload_speed: Upload_speed,
+          Network_congestion: Network_congestion,
           Connection_type_Fiber: Connection_type_Fiber,
-          Signal_strength: Signal_strength,
+          Connection_type_Cable: Connection_type_Cable,
         };
 
         fetch("/predict", {
